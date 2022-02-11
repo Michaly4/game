@@ -22,12 +22,12 @@ function game() {
          istNummer(getRandomInt(100));
       } else if (ask < prm) {
          alert("Загаданное число меньше");
-         alert(`Пробуй дальше ещё ${counter} попыток!`);
+         alert(`Пробуй дальше ещё *${counter}* попыток!`);
          counter--;
          istNummer(getRandomInt(100));
       } else if (ask > prm) {
          alert("Загаданное число больше");
-         alert(`Пробуй дальше ещё ${counter} попыток!`);
+         alert(`Пробуй дальше ещё *${counter}* попыток!`);
          counter--;
          istNummer(getRandomInt(100));
       } else if (ask == prm) {
