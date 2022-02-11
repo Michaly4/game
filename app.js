@@ -37,3 +37,4 @@ function game() {
    istNummer(getRandomInt(100));
 }
 game();
+//+++++++++++++++++++++++++++++++++++++++++++++++++++
