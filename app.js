@@ -11,22 +11,21 @@ function game() {
    let messege = prompt("Угадай число от 1 до 100");
 
    function isNumberGame(arg) {
-      console.log(arg);
-      let userNumber = messege;
-      if (userNumber === null) {
+      
+      if (messege === null) {
          alert("Игра окончена");
-      } else if (!isNumber(userNumber) || userNumber !== userNumber.trim()) {
+      } else if (!isNumber(messege) || messege !== messege.trim()) {
          alert("Введи число!");
          game();
-      } else if (userNumber < arg) {
+      } else if (messege > arg) {
          alert("Загаданное число меньше");
          alert("Введите новое число");
          game();
-      } else if (userNumber > arg) {
+      } else if (messege < arg) {
          alert("Загаданное число больше");
          alert("Введите новое число");
          game();
-      } else if (messege == messege) {
+      } else if (messege == arg) {
          alert("Поздравляю,Вы угадали!!!🏆");
       }
    }
