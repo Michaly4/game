@@ -7,37 +7,72 @@ function getRandomInt(max) {
 }
 
 function game() {
-let counter = 10;
-   function istNummerGame(prm) {
-      //console.log(prm);
-      ask = prompt("Угадай число от 1 до 100");
+   let randomNumber = 55;
+   let messege = prompt("Угадай число от 1 до 100");
+
+   function isNumberGame(arg) {
+      console.log(arg);
+      let userNumber = messege;
+      if (userNumber === null) {
+         alert("Игра окончена");
+      } else if (!isNumber(userNumber) || userNumber !== userNumber.trim()) {
+         alert("Введи число!");
+         game();
+      } else if (userNumber < arg) {
+         alert("Загаданное число меньше");
+         alert("Введите новое число");
+         game();
+      } else if (userNumber > arg) {
+         alert("Загаданное число больше");
+         alert("Введите новое число");
+         game();
+      } else if (messege == messege) {
+         alert("Поздравляю,Вы угадали!!!🏆");
+      }
+   }
+   isNumberGame(randomNumber);
+}
+game();
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++
+// Второй вариант
+/* 
+function game() {
+   let isTargetNummer = getRandomInt(100);
+   let ask = prompt("Угадай число от 1 до 100");
+   let counter = 10;
+
+   function istNummerGame(arg) {
+      let ask2;
       if (ask === null) {
          alert("Игра окончена");
-         counter--;
       } else if (counter == 0) {
          if (confirm("Попытки закончились, хотите сыграть еще?")) {
             game();
          } else {
             alert("Тогда всего хорошего!🖖🏻")
          }
-      } else if (!isNumber(ask)) {
+      } else if (!isNumber(ask) || ask !== ask.trim()) {
          alert("Введи число!");
-         counter--;
-         istNummerGame(getRandomInt(100));
-      } else if (ask <= 0) {
+         game();
+      } else if (ask > 100) {
          alert("Введи число от 1 до 100 😊 ");
          game();
-      } else if (ask < prm) {
+      } else if (ask > arg) {
          alert("Загаданное число меньше");
-         alert(`Пробуй дальше ещё ❗️${counter}❗️ попыток!`);
+         alert(`Пробуй дальше ещё *${counter}* попыток!`);
          counter--;
-         istNummerGame(getRandomInt(100));
-      } else if (ask > prm) {
+         ask2 = prompt("Угадай число от 1 до 100");
+         ask = ask2;
+         istNummerGame(isTargetNummer);
+      } else if (ask < arg) {
          alert("Загаданное число больше");
-         alert(`Пробуй дальше ещё ❗️${counter}❗️  попыток!`);
+         alert(`Пробуй дальше ещё *${counter}* попыток!`);
          counter--;
-         istNummerGame(getRandomInt(100));
-      } else if (ask == prm) {
+         ask2 = prompt("Угадай число от 1 до 100");
+         ask = ask2;
+         istNummerGame(isTargetNummer);
+      } else if (ask == arg) {
          alert("Поздравляю,Вы угадали!!!🏆");
          if (confirm("Хотели бы сыграть еще?")) {
             game();
@@ -46,7 +81,7 @@ let counter = 10;
          }
       }
    }
-   istNummerGame(getRandomInt(100));
+   istNummerGame(isTargetNummer);
 }
 game();
-//+++++++++++++++++++++++++++++++++++++++++++++++++++
+*/
